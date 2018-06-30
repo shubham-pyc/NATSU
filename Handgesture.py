@@ -2,7 +2,6 @@ import cv2 as cv
 import time
 import numpy as np
 import math
-import pyautogui as robot
 import webbrowser
 from Controller import  Controller
 
@@ -118,26 +117,21 @@ def main():
 
         if fingers ==1:
             print('2 fingers')
-           # connection.forward()
-            if flag==1:
-                robot.press('a')
+            connection.forward()
+           
 
         elif fingers ==2:
             print('3 fingers')
-            # connection.backward()
-            if flag==1:
-                robot.press('d')
+            connection.backward()
+            
         elif fingers ==3:
             print ('4 fingers')
-           # connection.turnLeft()
-            if flag==1:
-                robot.press('space')
+            connection.turnLeft()
+            
         elif fingers ==4:
             print('5 fingers')
-           # connection.turnRight()
-            if flag==0:
-                webbrowser.open('file:///C:/Users/Win%2010/Desktop/game/game.html')
-                flag =1
+            connection.turnRight()
+            
         else:
             pass
             connection.stop()
